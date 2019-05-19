@@ -12,7 +12,7 @@
 
 ### Starting the Server
 
-`ng serve` ou `npm start`
+`ng serve` or `npm start`
 
 ## 2. Starting the "Backend"
 
