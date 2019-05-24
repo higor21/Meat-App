@@ -28,4 +28,4 @@
 
 All used images in the application are owned by freepik.com
 
-Construindo Aplicações Web Com o Novo Angular (4, 5 e 6) course, by Udemy
+[Construindo Aplicações Web Com o Novo Angular (4, 5 e 6)](https://www.udemy.com/angular-pt/) course, by Udemy
