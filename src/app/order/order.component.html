@@ -6,7 +6,7 @@
   <section class="invoice">
         {{form.valid}}
         {{form.value | json}}
-        <!-- The 'novalidate' variable is related to browser portability -->
+        <!-- The 'novalidate' variable allow block validation of browser -->
         <form #form="ngForm" novalidate>
           <div class="row">
             <div class="col-xs-12">
@@ -20,34 +20,25 @@
             <div class="col-xs-12">
               <p class="lead">Endereço de Entrega:</p>
             </div>
-            <div class="col-sm-6 col-xs-12"
-              [class.has-error] = "!iptAddress.valid && (iptAddress.dirty || iptAddress.touched)"
-              [class.has-success] = "iptAddress.valid && (iptAddress.dirty || iptAddress.touched)"
-            >
-              <div class="form-group">
-                <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> Endereço</label>
-                <input type="text" class="form-control" name="address" ngModel placeholder="Endereço" #iptAddress="ngModel" minlength="5" autocomplete="off" required>
-                <span class="help-block" *ngIf="iptAddress.valid && (iptAddress.dirty || iptAddress.touched)"><i class="fa fa-check"></i> Ok</span>
-                <span class="help-block" *ngIf="!iptAddress.valid && (iptAddress.dirty || iptAddress.touched)"><i class="fa fa-remove"></i> Campo Obrigatório!</span>
-              </div>
+            <div class="col-sm-6 col-xs-12">
+              <mt-input-container label="Endereço" errorMessage="Obrigatório e no mínimo 5 caracteres">
+                  <input
+                    type="text" class="form-control" name="address"
+                    ngModel placeholder="Endereço"
+                    minlength="5" autocomplete="off" required
+                  >
+              </mt-input-container>
             </div>
-            <div class="col-sm-2 col-xs-6">
-              <div class="form-group"
-                [class.has-error] = "!iptNumber.valid && (iptNumber.dirty || iptNumber.touched)"
-                [class.has-success] = "iptNumber.valid && (iptNumber.dirty || iptNumber.touched)"
-              >
-                <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> Número</label>
-                <input type="text" class="form-control" name="number" #iptNumber="ngModel" ngModel placeholder="Número" autocomplete="off" required>
-                <span class="help-block" *ngIf="iptNumber.valid && (iptNumber.dirty || iptNumber.touched)"><i class="fa fa-check"></i> Ok</span>
-                <span class="help-block" *ngIf="!iptNumber.valid && (iptNumber.dirty || iptNumber.touched)"><i class="fa fa-remove"></i> Campo Obrigatório!</span>
-              </div>
+            <div class="col-sm-3 col-xs-6">
+              <mt-input-container label="Número" errorMessage="0brigatório e apenas números">
+                <input type="text" class="form-control" name="number" pattern="^[0-9]*$" ngModel placeholder="Número" autocomplete="off" required>
+              </mt-input-container>
             </div>
-            <div class="col-sm-4 col-xs-6">
+            <div class="col-sm-3 col-xs-6">
               <div class="form-group">
-                <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> Complemento</label>
+                <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> Complemento </label>
                 <input type="text" class="form-control" name="optional" ngModel autocomplete="off" placeholder="Complemento">
               </div>
-
             </div>
             <!-- /.col -->
           </div>
@@ -113,27 +104,7 @@
               <p class="lead">Formas de Pagamento:</p>
 
                 <div class="form-group">
-                   <div>
-                     <label>
-                       <div class="iradio_flat-red checked" aria-checked="false" aria-disabled="false"
-                           style="position: relative;">
-                           <input type="radio" name="r3" class="flat-red" checked="" style="position: absolute; opacity: 0;"/>
-                           <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-                       </div>
-                       Dinheiro
-                     </label>
-                   </div>
-                  <div>
-                    <label>
-                      <div class="iradio_flat-red" aria-checked="false" aria-disabled="false"
-                          style="position: relative;">
-                          <input type="radio" name="r3" class="flat-red" checked="" style="position: absolute; opacity: 0;"/>
-                          <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-                      </div>
-                      Cartão de Débito
-                    </label>
-                  </div>
-
+                  <mt-radio [options]="paymentOptions" ></mt-radio>
                 </div>
 
             </div>
