@@ -370,5 +370,57 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "Address of the first delivery",
+      "number": "12",
+      "optional": "",
+      "paymentOption": "DEB",
+      "orderItens": [
+        {
+          "menuId": "capp",
+          "quantity": 1
+        },
+        {
+          "menuId": "espreso",
+          "quantity": 1
+        },
+        {
+          "menuId": "zlasagna",
+          "quantity": 1
+        },
+        {
+          "menuId": "fries",
+          "quantity": 1
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "rua Mipibu",
+      "number": "419",
+      "optional": "",
+      "paymentOption": "DEB",
+      "orderItens": [
+        {
+          "menuId": "cup-cake",
+          "quantity": 1
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "rua antônio moreira ",
+      "number": "12",
+      "optional": "",
+      "paymentOption": "MON",
+      "orderItens": [
+        {
+          "menuId": "cup-cake",
+          "quantity": 3
+        }
+      ],
+      "id": 3
+    }
+  ]
 }

@@ -21,7 +21,25 @@ export class ShoppingCartService {
         this.itens.splice(this.itens.indexOf(item), 1)
     }
 
+    increaseQty(item: CartItem){
+        item.quantity += 1 
+    }
+  
+    decreaseQty(item: CartItem){
+        item.quantity -= 1
+        if(!item.quantity){
+            console.log('chegou')
+            this.removeItem(item)
+        }
+    }
+
+    getCartItens(){
+        return this.itens
+    }
+
     total(): number{
-        return this.itens.map((cItem) => cItem.value()).reduce((prev, pos) => (prev+pos))
+        return this.itens
+            .map(cItem => cItem.value())
+            .reduce((prev, pos) => prev + pos, 1)
     }
 }
