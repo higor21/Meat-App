@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { ROUTES } from './app.routes'
 
@@ -40,7 +41,8 @@ import { SharedModule } from './shared/shared.module';
       em background, dos módulos que deveriam ser carregados tardiamente
     */
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
