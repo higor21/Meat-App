@@ -12,7 +12,8 @@ class Order {
         public number: number,
         public optional: string,
         public paymentOption: string,
-        public orderItens: OrderItem[]
+        public orderItens: OrderItem[],
+        public id?: string
     ){}
 }
 

@@ -55,7 +55,7 @@ export class RestaurantsComponent implements OnInit {
       .debounceTime(500)
       .distinctUntilChanged()
       .switchMap(search => this.restaurantsService.restaurants(search))
-      .catch(error => Observable.from([]))
+      .catch(error => Observable.from([])) //serve para não quebrar a página, caso o backend esteja inativo
       .subscribe(rests => this.restaurants = rests)
 
     this.restaurantsService.restaurants().subscribe(rests => this.restaurants = rests)
