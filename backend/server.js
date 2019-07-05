@@ -15,7 +15,8 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 // login page
 server.post('/login', auth_1.handleAuthentication);
-server.use(authz_1.handleAuthorization);
+// is user authorized ?
+server.use('/orders', authz_1.handleAuthorization);
 // Use default router
 server.use(router);
 var options = {

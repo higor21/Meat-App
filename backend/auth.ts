@@ -6,6 +6,7 @@ import { apiConfig } from './api-config';
 
 export const handleAuthentication = (req: Request, res: Response) => {
     const user: User = req.body
+    //console.log(user)
     if(isValid(user)){
         const dbUser: User = users[user.email]
 
@@ -16,6 +17,7 @@ export const handleAuthentication = (req: Request, res: Response) => {
         const token = jwt.sign({sub: dbUser.email, iss: 'meat-api'}, apiConfig.secret )
         res.json({name: dbUser.name, email: dbUser.email, accessToken: token})
     }else{
+        // 403 - acesso negado para esse usuário
         res.status(403).json({message: 'Dados inválidos!'})
     }
 }

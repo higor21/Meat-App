@@ -1,4 +1,4 @@
-<div class="form-group"
+<div class="form-group has-feedback"
   [class.has-error] = "hasError()"
   [class.has-success] = "hasSuccess()"
 >
@@ -6,6 +6,6 @@
   
   <ng-content></ng-content>
 
-  <span class="help-block" *ngIf="hasSuccess()"><i class="fa fa-check"></i> Ok</span>
-  <span class="help-block" *ngIf="hasError()"><i class="fa fa-remove"></i> {{errorMessage}} </span>
+  <span class="help-block" *ngIf="showTipCorrect && hasSuccess()"><i class="fa fa-check"></i> Ok</span>
+  <span class="help-block" *ngIf="errorMessage && hasError()"><i class="fa fa-remove"></i> {{errorMessage}} </span>
 </div>

@@ -532,6 +532,42 @@
       "email": "higor@gmail.com",
       "password": "higor21",
       "id": 19
+    },
+    {
+      "name": "Higor Felype da silva carvalho",
+      "email": "felype.cet.15@gmail.com",
+      "emailConfirmation": "felype.cet.15@gmail.com",
+      "address": "Rua mipibu",
+      "number": "4023",
+      "optional": "",
+      "paymentOption": "MON",
+      "orderItens": [
+        {
+          "menuId": "cup-cake",
+          "quantity": 1
+        },
+        {
+          "menuId": "donut",
+          "quantity": 1
+        }
+      ],
+      "id": 20
+    },
+    {
+      "name": "Higor Felype da silva carvalho",
+      "email": "felype@gmail.com",
+      "emailConfirmation": "felype@gmail.com",
+      "address": "Rua mipibu",
+      "number": "234",
+      "optional": "",
+      "paymentOption": "DEB",
+      "orderItens": [
+        {
+          "menuId": "burger",
+          "quantity": 1
+        }
+      ],
+      "id": 21
     }
   ]
 }

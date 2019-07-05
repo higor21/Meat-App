@@ -20,7 +20,8 @@ server.use(jsonServer.bodyParser)
 // login page
 server.post('/login', handleAuthentication)
 
-server.use(handleAuthorization)
+// is user authorized ?
+server.use('/orders', handleAuthorization)
 
 // Use default router
 server.use(router) 

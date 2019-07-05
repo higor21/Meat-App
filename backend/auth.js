@@ -5,6 +5,7 @@ var jwt = require("jsonwebtoken");
 var api_config_1 = require("./api-config");
 exports.handleAuthentication = function (req, res) {
     var user = req.body;
+    //console.log(user)
     if (isValid(user)) {
         var dbUser = users_1.users[user.email];
         /*
@@ -15,6 +16,7 @@ exports.handleAuthentication = function (req, res) {
         res.json({ name: dbUser.name, email: dbUser.email, accessToken: token });
     }
     else {
+        // 403 - acesso negado para esse usuário
         res.status(403).json({ message: 'Dados inválidos!' });
     }
 };
