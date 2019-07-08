@@ -3,7 +3,7 @@ import { ShoppingCartService } from "app/restaurant-detail/shopping-cart/shoppin
 import { CartItem } from "app/restaurant-detail/shopping-cart/cart-item.model";
 import { Order } from "./order.model";
 import { Observable } from "rxjs/Observable";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { MEAT_API } from "app/app.api";
 
 @Injectable()
