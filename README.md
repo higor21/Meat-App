@@ -1,4 +1,4 @@
-# Meat - Angular App Starter
+# Meat App - Angular v4.3
 
 ## 1. Steps to start
 
