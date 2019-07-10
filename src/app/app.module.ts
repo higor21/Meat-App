@@ -22,6 +22,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './security/login/login.component';
 import { UserDetailComponent } from './header/user-detail/user-detail.component';
 import { ApplicationErrorHandler } from './app.error-handler';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,8 @@ import { ApplicationErrorHandler } from './app.error-handler';
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt-BR'},
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    // utilizado para colocar o servidor no ar sem defeitos nas rotas
     {provide: ErrorHandler, useClass: ApplicationErrorHandler}
   ],
   bootstrap: [AppComponent]
