@@ -1,4 +1,5 @@
 # Meat App - Angular v4.3
+I did this project in order to learn more about the Angular framework. It is a restaurant application where you can buy food and pay for it. To provide the user experience, in addition to this project, a fake web server was created.
 
 ## 1. Steps to start
 
@@ -10,7 +11,7 @@
 
 `npm install`
 
-### Starting the Server
+### Starting the App
 
 `ng serve` or `npm start`
 
